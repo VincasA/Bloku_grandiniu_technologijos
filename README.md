@@ -1,14 +1,25 @@
-# Maišos funkcijos realizacija (v0.1)
+išmaniosios sutarties ir
+decentralizuotos aplikacijos kūrimas (v0.1)
 
-## Idėja
-Ši maišos funkcija yra sukurta naudojant XOR operacijas ir bitų perstūmimą. Maišas yra sukurtas iš fiksuoto dydžio (256 bitų) būsenos, kurią modifikuojame pagal įvesties duomenis. Bitų perstūmimas padeda užtikrinti lavinos efektą. Galutinis rezultatas pateikiamas kaip 64 simbolių hex stringas.
+Sutarties logika:
 
-### Žingsniai:
-1. Inicializuojama 256 bitų būsenos masyvas.
-2. Kiekvienas įvesties simbolis paverčiamas į ASCII reikšmę.
-3. Vykdoma XOR operacija ir bitų perstūmimai kiekviename simbolyje.
-4. Būsena sujungiama į 64 simbolių hex stringą.
+1. Sutarties sukūrimas:
+Gamintojas (manufacturer) sukuria sutartį, nurodydamas mažmenininko (retailer) ir kurjerio (courier) adresus.
 
-## Naudojimas
-- Failo įvestis: `./program <input_file>`
-- Rankinė įvestis: `./program` ir tada įvesti tekstą per komandinę eilutę.
+2. Užsakymo pateikimas:
+Mažmenininkas pateikia užsakymą, nurodydamas produkto pavadinimą ir kiekį. Įvykis OrderSent praneša gamintojui apie užsakymą.
+
+3. Kainų nustatymas:
+Gamintojas nurodo užsakymo kainą ir siuntos kainą. Šios vertės perduodamos mažmenininkui per PriceSent įvykį.
+
+4. Apmokėjimas:
+Mažmenininkas atlieka apmokėjimą (užsakymo kaina + siuntos kaina). Lėšos laikomos sutartyje iki pristatymo.
+
+5. Sąskaitos pateikimas:
+Gamintojas siunčia sąskaitą faktūrą ir numatytą pristatymo datą per InvoiceSent įvykį.
+
+6. Pristatymo patvirtinimas:
+Kurjeris pažymi užsakymą kaip pristatytą. Įvykis OrderDelivered informuoja apie pristatymo užbaigimą.
+
+7. Lėšų paskirstymas:
+Mažmenininkas užbaigia procesą. Sutartis perveda užsakymo kainą gamintojui ir siuntos kainą kurjeriui.
