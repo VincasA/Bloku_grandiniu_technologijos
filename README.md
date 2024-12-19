@@ -10,5 +10,6 @@
 4. Būsena sujungiama į 64 simbolių hex stringą.
 
 ## Naudojimas
+- Programos kompiliavimas 'g++ -std=c++11 -o  program main.cpp'
 - Failo įvestis: `./program <input_file>`
 - Rankinė įvestis: `./program` ir tada įvesti tekstą per komandinę eilutę.
