@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Delivery DApp</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Advanced Delivery System</h1>
+      <p>Streamlined smart contract for efficient delivery and payments</p>
+    </header>
+
+    <section class="connect-section">
+      <h2>Connect Wallet</h2>
+      <button id="connectWallet" class="btn-primary">Connect Wallet</button>
+      <div id="status" class="status">Connect your wallet to interact with the contract.</div>
+
+    </section>
+
+    <section class="deploy-section">
+      <h2>Deploy Contract</h2>
+      <form id="deployForm">
+        <div class="form-group">
+          <label for="retailerAddress">Retailer Address:</label>
+          <input type="text" id="retailerAddress" placeholder="Enter Retailer Address" required />
+        </div>
+        <div class="form-group">
+          <label for="courierAddress">Courier Address:</label>
+          <input type="text" id="courierAddress" placeholder="Enter Courier Address" required />
+        </div>
+        <button type="submit" class="btn-primary">Deploy Contract</button>
+      </form>
+      <div id="deploymentStatus" class="status"></div>
+    </section>
+
+    <section class="actions-section">
+      <h2>Contract Actions</h2>
+      <div class="form-group">
+        <label for="product">Product:</label>
+        <input type="text" id="product" placeholder="Enter Product Name" />
+      </div>
+      <div class="form-group">
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" placeholder="Enter Quantity" />
+      </div>
+      <button id="sendOrder" class="btn-primary">Send Order</button>
+
+      <div class="form-group">
+        <label for="orderPrice">Order Price (ETH):</label>
+        <input type="text" id="orderPrice" placeholder="Enter Order Price in ETH" />
+      </div>
+      <div class="form-group">
+        <label for="shipmentPrice">Shipment Price (ETH):</label>
+        <input type="text" id="shipmentPrice" placeholder="Enter Shipment Price in ETH" />
+      </div>
+      <button id="setPrices" class="btn-primary">Set Prices</button>
+
+      <button id="makePayment" class="btn-secondary">Make Payment</button>
+      <button id="sendInvoice" class="btn-secondary">Send Invoice</button>
+      <button id="confirmDelivery" class="btn-primary">Confirm Delivery</button>
+      <button id="finalizeOrder" class="btn-primary">Finalize Order</button>
+    </section>
+
+    <section class="balance-section">
+      <h2>Contract Balance</h2>
+      <button id="getBalance" class="btn-primary">Get Balance</button>
+      <div id="balanceOutput">Balance: <span>0</span> ETH</div>
+    </section>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/web3/dist/web3.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
