@@ -1,0 +1,40 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "/Users/vincas/Library/CloudStorage/OneDrive-VilniusUniversity/III sem/Bloku grandiniu technologijos/Programavimas/4-toji uzduotis. išmanioji sutartis/safe-delivery-dapp/contracts/SafeDelivery.sol": {
+      "lastModificationDate": 1736461510415,
+      "contentHash": "eb5abb812590f4babb02387973a54abc",
+      "sourceName": "contracts/SafeDelivery.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "SafeDelivery"
+      ]
+    }
+  }
+}

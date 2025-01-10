@@ -1,78 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Advanced Delivery DApp</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safe Delivery DApp</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1>Advanced Delivery System</h1>
-      <p>Streamlined smart contract for efficient delivery and payments</p>
-    </header>
+  <header>
+    <h1>Safe Delivery Decentralized Application</h1>
+    <p>Interact with the SafeDelivery smart contract seamlessly.</p>
+    <button onclick="connectWallet()">Connect Wallet</button>
+    <p id="walletAddress">Not connected</p>
+</header>
 
-    <section class="connect-section">
-      <h2>Connect Wallet</h2>
-      <button id="connectWallet" class="btn-primary">Connect Wallet</button>
-      <div id="status" class="status">Connect your wallet to interact with the contract.</div>
 
-    </section>
+    <main>
+        <section id="manufacturer">
+            <h2>Manufacturer</h2>
+            <form id="createContractForm">
+                <label for="retailerAddress">Retailer Address:</label>
+                <input type="text" id="retailerAddress" placeholder="Enter retailer address">
 
-    <section class="deploy-section">
-      <h2>Deploy Contract</h2>
-      <form id="deployForm">
-        <div class="form-group">
-          <label for="retailerAddress">Retailer Address:</label>
-          <input type="text" id="retailerAddress" placeholder="Enter Retailer Address" required />
-        </div>
-        <div class="form-group">
-          <label for="courierAddress">Courier Address:</label>
-          <input type="text" id="courierAddress" placeholder="Enter Courier Address" required />
-        </div>
-        <button type="submit" class="btn-primary">Deploy Contract</button>
-      </form>
-      <div id="deploymentStatus" class="status"></div>
-    </section>
+                <label for="courierAddress">Courier Address:</label>
+                <input type="text" id="courierAddress" placeholder="Enter courier address">
 
-    <section class="actions-section">
-      <h2>Contract Actions</h2>
-      <div class="form-group">
-        <label for="product">Product:</label>
-        <input type="text" id="product" placeholder="Enter Product Name" />
-      </div>
-      <div class="form-group">
-        <label for="quantity">Quantity:</label>
-        <input type="number" id="quantity" placeholder="Enter Quantity" />
-      </div>
-      <button id="sendOrder" class="btn-primary">Send Order</button>
+                <button type="button" onclick="createContract()">Create Contract</button>
+            </form>
 
-      <div class="form-group">
-        <label for="orderPrice">Order Price (ETH):</label>
-        <input type="text" id="orderPrice" placeholder="Enter Order Price in ETH" />
-      </div>
-      <div class="form-group">
-        <label for="shipmentPrice">Shipment Price (ETH):</label>
-        <input type="text" id="shipmentPrice" placeholder="Enter Shipment Price in ETH" />
-      </div>
-      <button id="setPrices" class="btn-primary">Set Prices</button>
+            <form id="setPricesForm">
+                <label for="price">Order Price (in Wei):</label>
+                <input type="text" id="price" placeholder="Enter price">
 
-      <button id="makePayment" class="btn-secondary">Make Payment</button>
-      <button id="sendInvoice" class="btn-secondary">Send Invoice</button>
-      <button id="confirmDelivery" class="btn-primary">Confirm Delivery</button>
-      <button id="finalizeOrder" class="btn-primary">Finalize Order</button>
-    </section>
+                <label for="shippingFee">Shipping Fee (in Wei):</label>
+                <input type="text" id="shippingFee" placeholder="Enter shipping fee">
 
-    <section class="balance-section">
-      <h2>Contract Balance</h2>
-      <button id="getBalance" class="btn-primary">Get Balance</button>
-      <div id="balanceOutput">Balance: <span>0</span> ETH</div>
-    </section>
-  </div>
+                <button type="button" onclick="setPrices()">Set Prices</button>
+            </form>
 
-  <script src="https://cdn.jsdelivr.net/npm/web3/dist/web3.min.js"></script>
-  <script src="app.js"></script>
+            <form id="sendInvoiceForm">
+                <label for="deliveryDate">Delivery Date (Unix Timestamp):</label>
+                <input type="text" id="deliveryDate" placeholder="Enter delivery date">
+
+                <button type="button" onclick="sendInvoice()">Send Invoice</button>
+            </form>
+        </section>
+
+        <section id="retailer">
+            <h2>Retailer</h2>
+            <form id="sendOrderForm">
+                <label for="product">Product:</label>
+                <input type="text" id="product" placeholder="Enter product name">
+
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" placeholder="Enter quantity">
+
+                <button type="button" onclick="sendOrder()">Send Order</button>
+            </form>
+
+            <form id="payOrderForm">
+                <label for="paymentValue">Payment Value (in Wei):</label>
+                <input type="text" id="paymentValue" placeholder="Enter total payment">
+
+                <button type="button" onclick="payOrder()">Pay Order</button>
+            </form>
+
+            <button type="button" onclick="finalizeOrder()">Finalize Order</button>
+        </section>
+
+        <section id="courier">
+            <h2>Courier</h2>
+            <button type="button" onclick="confirmDelivery()">Confirm Delivery</button>
+        </section>
+
+        <section id="events">
+            <h2>Contract Events</h2>
+            <ul id="eventsList">
+                <!-- Dynamic event updates will be shown here -->
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Safe Delivery DApp</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
