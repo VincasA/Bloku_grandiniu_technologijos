@@ -1,7 +1,6 @@
-išmaniosios sutarties ir
-decentralizuotos aplikacijos kūrimas (v0.1)
+# išmaniosios sutarties ir decentralizuotos aplikacijos kūrimas (v0.1)
 
-Sutarties logika:
+### Sutarties logika:
 
 1. Sutarties sukūrimas:
 Gamintojas (manufacturer) sukuria sutartį, nurodydamas mažmenininko (retailer) ir kurjerio (courier) adresus.
@@ -26,7 +25,8 @@ Mažmenininkas užbaigia procesą. Sutartis perveda užsakymo kainą gamintojui 
 
 
 
-Kaip patikrinti išmanios sutarties veiksmingumą, naudojant Remix IDE:
+### Kaip patikrinti išmanios sutarties veiksmingumą, naudojant Remix IDE:
+
 1. Kompiliuoti sutarti
 
 2. Suvesti Retailer ir Courier paskyrų adresus prie DEPLOY sekcijos.
@@ -46,3 +46,14 @@ Kaip patikrinti išmanios sutarties veiksmingumą, naudojant Remix IDE:
 9. Naudojant Retailer paskyrą, paspausti finalizeOrder.
 
 Galiausiai matome, kad iš Retailer paskyros buvo pervesta 5 ETH Manufacturer paskyrai ir 1 ETH Courier paskyrai.
+
+### Ganache testnet prieš testuojant sutartį:
+![image](https://github.com/user-attachments/assets/4cda528e-0e6e-40cf-9fb8-d46ed9f52c95)
+
+### Ganache testnet po sutarties testavimo:
+![image](https://github.com/user-attachments/assets/cbc27ca4-24ee-4a51-93f5-ad03663f0ffc)
+
+### Per Etherscan matome, kad sėkmingai buvo deployinta sutartis, naudojant Sepolia testnet:
+![image](https://github.com/user-attachments/assets/f0ca0485-4ba0-4332-a8a8-71a221daca70)
+
+## Instrukcijos, kaip diegti sutartį ir paleisti front-end
